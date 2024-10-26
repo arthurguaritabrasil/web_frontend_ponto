@@ -1,0 +1,330 @@
+@import url('./components/header.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('./components/footer.css');
+
+:root {
+    --fonte-poppins: "Poppins", sans-serif;
+    --azul-claro: #3F72AF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.data-hora {
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    padding: 50px;
+    background-color: #DBE2EF;
+    align-self: center;
+    margin-top: 30px;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.493);
+}
+
+#btn-dialog-fechar, #btn-dialog-fechar-pass {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#btn-dialog-fechar:hover , #btn-dialog-fechar-pass:hover {
+    color: black;
+    background-color: rgb(235, 149, 149);
+}
+
+#dialog-hora-pass {
+    margin-bottom: 10px;
+}
+
+#data, #tipos-ponto-pass {
+    border-radius: 4px;
+    border: 0.5px solid black;
+    padding: 13px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#alerta-registro-ponto {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    padding: 20px;
+}
+
+.data-hora p {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    font-family: var(--fonte-poppins);
+}
+
+#alerta-registro-ponto p {
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    font-family: var(--fonte-poppins);
+    font-weight: 400;
+    font-style: normal;
+}
+
+#alerta-registro-ponto-fechar {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+
+#div-btn-bater-ponto {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#div-btn-bater-ponto button {
+    border-radius: 20px;
+    padding: 30px;
+    font-family: var(--fonte-poppins);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#div-btn-bater-ponto button:hover {
+    transform: scale(1.1);
+}
+
+#dialog-ponto,
+#dialog-ponto-pass {
+    padding: 30px;
+    border-radius: 15px;
+    margin: auto;
+    border: none;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa;
+    font-family: var(--fonte-poppins);
+    max-width: 400px;
+    text-align: center;
+}
+
+#dialog-ponto p, #dialog-ponto-pass p,
+#dialog-ponto label, #dialog-ponto-pass label {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #3F72AF;
+}
+
+#dialog-ponto select, #dialog-ponto-pass select,
+#input-observacao, #justificativa-pass {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+#input-observacao, #justificativa-pass {
+    resize: none;
+}
+
+#arquivo-pass {
+    font-size: 0.95rem;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    background-color: #fff;
+}
+
+#arquivo-pass {
+    padding: 15px;
+    margin-top: 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid #3F72AF;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    color: #3F72AF;
+    font-size: 1.1rem;
+    font-family: var(--fonte-poppins);
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+#file-chosen {
+    margin-left: 10px;
+    font-family: var(--fonte-poppins);
+    font-size: 1rem;
+    color: #333;
+}
+
+.custom-file-upload:hover {
+    transform: scale(1.05);
+    color: white;
+}
+
+#dialog-ponto button:not(#btn-dialog-fechar),
+#dialog-ponto-pass button:not(#btn-dialog-fechar-pass) {
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #3F72AF;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: calc(100% - 20px);
+    margin-top: 10px;
+}
+
+#dialog-ponto button:not(#btn-dialog-fechar):hover,
+#dialog-ponto-pass button:not(#btn-dialog-fechar-pass):hover {
+    background-color: #2a4a78;
+    transform: scale(1.05);
+}
+
+#dialog-ponto-pass textarea {
+    min-height: 80px;
+}
+
+#dialog-ponto-pass label[for="data"], #dialog-ponto-pass label[for="justificativa-pass"] {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #3F72AF;
+}
+
+#dialog-last-register {
+    margin-top: 30px;
+}
+
+#dialog-ponto p#dialog-data, #dialog-ponto p#dialog-hora,
+#dialog-ponto-pass p#dialog-hora-pass {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+#relatorioButton, #btn-bater-ponto-pass, #btn-bater-ponto {
+    background-color: var(--azul-claro);
+    color: white;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+#relatorioButton:hover, #btn-bater-ponto-pass:hover {
+    transform: scale(1.1);
+}
+
+#relatorioButton {
+    margin-right: 30px;
+}
+
+#input-observacao {
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+
+
+.div-input-observacao {
+  margin: 5px;
+}
+
+.input-observacao {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+#outros-botoes {
+    align-self: center;
+    margin-top: 40px;
+}
+
+#outros-botoes button{
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* Responsividade - Ajustes em telas pequenas */
+@media (max-width: 768px) {
+    .data-hora {
+        padding: 20px;
+        font-size: 2rem;
+    }
+
+    #div-btn-bater-ponto button {
+        padding: 15px;
+        font-size: 1.5rem;
+    }
+
+    #btn-dialog-bater-ponto, #btn-dialog-bater-ponto-pass {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    #alerta-registro-ponto {
+        bottom: 10px;
+        right: 10px;
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-hora p {
+        font-size: 1.5rem;
+    }
+
+    #div-btn-bater-ponto button {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    #btn-dialog-bater-ponto, #btn-dialog-bater-ponto-pass {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    #alerta-registro-ponto {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

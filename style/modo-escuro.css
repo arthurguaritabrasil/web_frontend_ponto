@@ -1,0 +1,99 @@
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #2b2929;
+    color: white;
+}
+
+h1 {
+    background-color:  white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode h1 {
+    background-color: #2b2929;
+    color: white;
+}
+
+.calendar {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .calendar {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .data-hora {
+    background-color: #112D4E;
+}
+
+body.dark-mode #dialog-ponto-pass {
+    background-color: #17406e;
+    color: white;
+}
+
+body.dark-mode #dialog-ponto {
+    background-color: #17406e;
+    color: white;
+}
+
+body.dark-mode #enunciado {
+    color: white;
+}
+
+body.dark-mode .toggle-details {
+    color: white;
+}
+
+body.dark-mode .registro-item {
+    background-color: #112D4E;
+}
+
+body.dark-mode .registro-detalhe {
+    background-color: #3f3f3f;
+}
+
+body.dark-mode p, summary {
+    color: white;
+}
+
+body.dark-mode #div-local {
+    color: rgb(241, 213, 213);
+}
+
+body.dark-mode .details-localização[open] {
+    background-color: #333;
+}
+
+body.dark-mode .linkGoogle {
+    color: white;
+}
+
+body.dark-mode .linkGoogle:hover {
+    color: #3F72AF;
+}
+
+body.dark-mode .today {
+    color: white;
+    border: 2px solid white;
+}
+
+body.dark-mode #dialog-data, body.dark-mode #dialog-hora {
+    color: white;
+}
+
+body #dialog-data, body #dialog-hora {
+    color:black;
+}
+
+body.dark-mode #dialog-last-register {
+    color: white;
+}

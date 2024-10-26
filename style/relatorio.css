@@ -1,0 +1,358 @@
+@import url('./components/header.css');
+@import url('./components/footer.css');
+
+:root {
+    --fonte-poppins: "Poppins", sans-serif;
+    --cor-primaria: #003459;
+    --cor-secundaria: #007EA7;
+    --cor-texto: #333;
+    --cor-fundo: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do body e do layout */
+body {
+    height: 100vh;
+}
+
+/* Layout principal */
+main {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fonte-poppins);
+    gap: 20px;
+}
+
+#start-relatorio {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2.5rem;
+    color: black;
+    font-weight: 700;
+}
+
+.form-edicao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+#labelFiltro {
+    text-align: center;
+}
+
+#filter {
+    align-self: center;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input, select {
+    border-radius: 3px;
+    border: 0.5px solid black;
+    font-size: 15px;
+    padding: 10px;
+}
+
+#btn-exportar-pdf {
+    align-self: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 90px;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+#msg-registro-ind {
+    text-align: center;
+}
+
+#btn-exportar-pdf:hover {
+    transform: scale(1.1);
+}
+
+#botoes-edit {
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+    gap: 10px;
+}
+
+#btn-gerar-grafico {
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    font-size: 1.3rem;
+    border: 0px;
+    width: 20%;
+    align-self: center;
+    transition: transform 0.3s ease;
+}
+
+#btn-gerar-grafico:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos dos parágrafos */
+p {
+    font-size: 1.25rem;
+    color: black;
+    line-height: 2.5;
+}
+
+/* Links */
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Container de conteúdo com responsividade */
+#conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+/* Estilo dos itens de registro */
+.registro-item {
+    border: 2px solid var(--cor-primaria);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #DBE2EF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+#div-local {
+    cursor: pointer;
+    color: blue;
+}
+
+/* Container de detalhes do registro */
+.registros-ponto {
+    margin: 20px 0;
+}
+
+/* Estilo do link para detalhes */
+.toggle-details {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.6rem;
+}
+
+.toggle-details:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Estilo das informações detalhadas do registro */
+.registro-detalhe {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Ajuste das margens dos parágrafos dentro de detalhes */
+.registro-detalhe p {
+    margin: 0;
+    margin-right: 20px;
+}
+
+#botoes-exc-edit {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo dos botões */
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--cor-secundaria);
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.theme-toogle-button:hover {
+    background-color: #003459;
+}
+
+/* Estilos do mapa dentro dos detalhes */
+.map {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Ajuste de espaçamento e estilo para latitude/longitude */
+.registro-details-latitude, .registro-details-longitude {
+    padding-left: 5px;
+}
+
+/* Estilo dos detalhes abertos */
+details[open] {
+    padding: 15px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo do resumo de detalhes */
+details[open] summary {
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Estilo do conteúdo de localização */
+.details-localização[open] .map {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+}
+
+/* Responsividade para telas menores que 768px */
+@media (max-width: 768px) {
+    #start-relatorio {
+        font-size: 2rem;
+    }
+
+    .form-edicao {
+        gap: 10px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input, select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #btn-exportar-pdf {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    #botoes-edit {
+        width: 100%;
+        gap: 5px;
+    }
+
+    #btn-gerar-grafico {
+        width: 80%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .registro-item {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    .registro-detalhe {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #botoes-exc-edit {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .map {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 2rem;
+        margin: 20px;
+    }
+
+    #start-relatorio {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input, select {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    #btn-exportar-pdf {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    #btn-gerar-grafico {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .registro-item {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 8px;
+    }
+
+    .registro-detalhe {
+        padding: 8px;
+    }
+
+    #btn-gerar-grafico {
+        width: 30%;
+    }
+
+    .map {
+        height: 120px;
+    }
+}
