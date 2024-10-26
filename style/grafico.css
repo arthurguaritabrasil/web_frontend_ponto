@@ -193,9 +193,13 @@ details[open] summary {
     border-radius: 5px;
 }
 
-footer {
-    position: relative;
-    bottom: 0;
+.history-button {
+  background-color: rgb(155, 155, 155);
+  color: black;
+}
+
+.history-button:hover {
+  background-color: rgb(155, 155, 155);
 }
 
 /* Responsividade para telas menores */

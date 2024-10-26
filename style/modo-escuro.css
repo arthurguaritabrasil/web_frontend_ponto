@@ -32,16 +32,17 @@ body.dark-mode .calendar {
 }
 
 body.dark-mode .data-hora {
-    background-color: #112D4E;
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode #dialog-ponto-pass {
-    background-color: #17406e;
+    background-color: #131313;
     color: white;
 }
 
 body.dark-mode #dialog-ponto {
-    background-color: #17406e;
+    background-color: #131313;
     color: white;
 }
 
@@ -54,7 +55,7 @@ body.dark-mode .toggle-details {
 }
 
 body.dark-mode .registro-item {
-    background-color: #112D4E;
+    background-color: rgb(21, 21, 21);
 }
 
 body.dark-mode .registro-detalhe {
@@ -78,7 +79,7 @@ body.dark-mode .linkGoogle {
 }
 
 body.dark-mode .linkGoogle:hover {
-    color: #3F72AF;
+    color: white;
 }
 
 body.dark-mode .today {
@@ -96,4 +97,49 @@ body #dialog-data, body #dialog-hora {
 
 body.dark-mode #dialog-last-register {
     color: white;
+}
+
+body.dark-mode .calendar header {
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode header {
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .header-title {
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .div-botoes button {
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #relatorioButton, body.dark-mode #btn-bater-ponto-pass, body.dark-mode #btn-bater-ponto {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .first-div {
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .btn-dialog-bater-ponto {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #dialog-hora-pass, body.dark-mode .dialog-span, body.dark-mode #file-chosen {
+  color: white;
+}
+
+body.dark-mode .registro-item, body.dark-mode .registro-detalhe{
+  border: 2px solid white;
 }
