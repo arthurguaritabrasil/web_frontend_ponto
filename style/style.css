@@ -369,48 +369,130 @@ input[type="file"] {
   z-index: 2;
 }
 
-/* Responsividade - Ajustes em telas pequenas */
-@media (max-width: 768px) {
-    .data-hora {
-        padding: 20px;
-        font-size: 2rem;
+/* Responsividade para tablets e dispositivos médios (tela de até 1024px) */
+@media (max-width: 1024px) {
+    .div-main {
+        flex-direction: column;
+        align-items: center;
     }
 
-    #div-btn-bater-ponto button {
-        padding: 15px;
-        font-size: 1.5rem;
-    }
-
-    #btn-dialog-bater-ponto, #btn-dialog-bater-ponto-pass {
-        padding: 12px;
-        font-size: 1rem;
+    .first-div, .second-div {
+        width: 100%;
     }
 
     #alerta-registro-ponto {
+        width: 300px;
+        height: auto;
         bottom: 10px;
         right: 10px;
         padding: 15px;
         font-size: 1rem;
     }
+
+    .data-hora {
+        padding: 30px;
+        font-size: 1.5rem;
+        height: auto;
+    }
+
+    .calendario {
+        width: 100%;
+        margin-top: 20px;
+    }
 }
 
-@media (max-width: 480px) {
-    .data-hora p {
-        font-size: 1.5rem;
+/* Responsividade para telas pequenas e smartphones (tela de até 768px) */
+@media (max-width: 768px) {
+    .div-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data-hora {
+        padding: 20px;
+        font-size: 1.2rem;
+        margin: 10px;
+    }
+
+    .botoes {
+        width: 80%;
+        font-size: 0.9rem;
     }
 
     #div-btn-bater-ponto button {
-        padding: 10px;
-        font-size: 1.2rem;
+        padding: 12px;
+        font-size: 1rem;
     }
 
-    #btn-dialog-bater-ponto, #btn-dialog-bater-ponto-pass {
-        padding: 10px;
-        font-size: 0.9rem;
+    #dialog-ponto,
+    #dialog-ponto-pass {
+        padding: 20px;
+        max-width: 90%;
     }
 
     #alerta-registro-ponto {
+        width: 90%;
+        bottom: 10px;
+        right: 10px;
         padding: 10px;
         font-size: 0.9rem;
+    }
+
+    .calendario {
+        width: 100%;
+        margin-top: 20px;
+        order: 2;
+    }
+}
+
+/* Responsividade para telas muito pequenas (tela de até 480px) */
+@media (max-width: 480px) {
+
+    body {
+        height: 100vh;
+        background-image: none;
+    }
+    
+    .div-main {
+        flex-direction: column;
+    }
+
+    .data-hora p {
+        font-size: 1rem;
+    }
+
+    .botoes {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
+    #div-btn-bater-ponto button {
+        padding: 20px;
+        font-size: 1.3rem;
+    }
+
+    #dialog-ponto,
+    #dialog-ponto-pass {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    #alerta-registro-ponto {
+        width: 45%;
+        padding: 8px;
+        font-size: 0.8rem;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .calendario {
+        width: 100%;
+        margin-top: 15px;
+        order: 2;
+    }
+
+    .custom-file-upload {
+        font-size: 0.9rem;
+        padding: 8px 15px;
     }
 }
