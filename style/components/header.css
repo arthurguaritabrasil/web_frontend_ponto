@@ -38,11 +38,15 @@ header {
 }
 
 #imagemHome {
-    transition: transform 0.3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-#imagemHome:hover {
-    transform: scale(1.2);
+#relatorioGo {
+    background-color: black;
+    font-family: var(--fonte-poppins);
+    font-weight: bold;
 }
 
 .header-left .logo {

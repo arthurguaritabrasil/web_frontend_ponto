@@ -140,6 +140,15 @@ body.dark-mode #dialog-hora-pass, body.dark-mode .dialog-span, body.dark-mode #f
   color: white;
 }
 
-body.dark-mode .registro-item, body.dark-mode .registro-detalhe{
-  border: 2px solid white;
+body.dark-mode .registro-detalhe, body.dark-mode details[open] {
+  border: 1px solid white;
+}
+
+body.dark-mode .registro-item {
+    box-shadow: 6px 9px 12px 1px rgba(255, 255, 255, 0.234);
+}
+
+body.dark-mode #relatorioGo {
+    background-color: white;
+    color: black;
 }

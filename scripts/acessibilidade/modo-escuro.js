@@ -12,13 +12,6 @@ function toggleIcon() {
   } else {
     icon.src = "./style/assets/caneta.png";
   }
-
-  if (imagemHome.src.includes("homeIcon2.png")) {
-    imagemHome.src = "./style/assets/homeIcon.png";
-  } else {
-    imagemHome.src = "./style/assets/homeIcon2.png";
-  }
-
 }
 
 toggleButton.addEventListener('click', () => {

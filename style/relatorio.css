@@ -1,19 +1,18 @@
 @import url('./components/header.css');
-@import url('./components/footer.css');
 
 :root {
     --fonte-poppins: "Poppins", sans-serif;
     --cor-primaria: #003459;
     --cor-secundaria: #007EA7;
     --cor-texto: #333;
-    --cor-fundo: #f4f4f4;
+    --cor-fundo: rgba(132, 35, 35, 0.7);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--fonte-poppins);
 }
 
 /* Estilo geral do body e do layout */
@@ -21,18 +20,20 @@ body {
     height: 100vh;
 }
 
-/* Layout principal */
-main {
+h1 {
+    font-size: 3.5rem;
+}
+
+.mainPage {
     display: flex;
     flex-direction: column;
-    font-family: var(--fonte-poppins);
-    gap: 20px;
+    gap: 30px;
+    
 }
 
 #start-relatorio {
     text-align: center;
     margin: 30px 0;
-    font-size: 2.5rem;
     color: black;
     font-weight: 700;
 }
@@ -53,9 +54,18 @@ label {
 
 #filter {
     align-self: center;
+    text-align: center;
     border: 0.5px solid black;
     border-radius: 10px;
     cursor: pointer;
+    width: 20%;
+    font-size: 20px;
+    appearance: none;
+    transition: all 0.3s ease;
+}
+
+#filter:focus {
+    outline: none;
 }
 
 input, select {
@@ -72,8 +82,8 @@ input, select {
     margin-bottom: 90px;
     padding: 20px;
     font-size: 20px;
-    background-color: rgb(155, 155, 155);
-    color: black;
+    background-color:black;
+    color: white;
     font-weight: 550;
 }
 
@@ -94,8 +104,8 @@ input, select {
 
 #btn-gerar-grafico {
     padding: 20px;
-    background-color: rgb(155, 155, 155);
-    color: black;
+    background-color: black;
+    color: white;
     font-size: 20px;
     font-weight: 550;
     border: 0px;
@@ -137,19 +147,25 @@ a:hover {
 
 /* Estilo dos itens de registro */
 .registro-item {
-    border: 2px solid var(--cor-primaria);
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 10px;
-    background-color: #DBE2EF;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-left: 90px;
-    margin-right: 90px;
+    background-color: #e6e6e6;
+    box-shadow: 6px 9px 12px 1px rgba(0, 0, 0, 0.234);
+}
+
+#registros-relatorio {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    width: 70%;
+    align-self: center;
 }
 
 #div-local {
     cursor: pointer;
-    color: blue;
+    color: black;
 }
 
 /* Container de detalhes do registro */
@@ -178,11 +194,12 @@ a:hover {
     align-items: center;
     margin-bottom: 25px;
     padding: 15px;
-    border: 2px solid var(--cor-secundaria);
+    border: 2px solid black;
     border-radius: 8px;
     background-color: #f9f9f9;
     font-size: 1.1rem;
     line-height: 1.6;
+    text-align: start;
 }
 
 /* Ajuste das margens dos parágrafos dentro de detalhes */
@@ -202,7 +219,7 @@ button {
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    background-color: var(--cor-secundaria);
+    background-color: black;
     color: white;
     transition: background-color 0.3s ease;
     margin-bottom: 10px;
@@ -228,7 +245,7 @@ button {
 /* Estilo dos detalhes abertos */
 details[open] {
     padding: 15px;
-    border: 2px solid var(--cor-secundaria);
+    border: 2px solid black;
     border-radius: 5px;
     background-color: #f9f9f9;
 }
@@ -256,6 +273,10 @@ details[open] summary {
 
     .form-edicao {
         gap: 10px;
+    }
+
+    #registros-relatorio {
+        width: 80%;
     }
 
     label {

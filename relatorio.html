@@ -11,31 +11,35 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-left">
-          <img id="icon" src="./style/assets/caneta.png" alt="Logo do Ponto Eletrônico">
-            <span class="header-title">Ponto Eletrônico</span>
-        </div>
-
-        <nav class="header-nav">
-            <a href="./index.html" class="nav-link">
-                <img id="imagemHome" src="./style/assets/homeIcon2.png"  width="30" height="30" alt="Ícone Home">
-            </a>
-            <button onclick="toggleIcon()" class="theme-toggle-button" id="ClaroEscuro">
-                <img id="imagemModoCE" src="./style/assets/modo-claroescuro.png" width="30" height="30" alt="Alternar modo claro/escuro">
-            </button>
-            <div class="user-profile">
-                <img src="./style/assets/images.png" alt="Foto do usuário" class="user-image">
+    <div class="second-div">
+        <div class="header-div">
+          <header>
+            <div class="header-left">
+                <img id="icon" src="./style/assets/caneta.png" alt="Logo do Ponto Eletrônico">
+                <span class="header-title">Ponto Eletrônico</span>
             </div>
-        </nav>
-        <link rel="stylesheet" href="./style/modo-escuro.css">
-        <script src="./scripts/acessibilidade/modo-escuro.js" defer></script>
-    </header>
+      
+            <a href="index.html">
+                <img src="./style/assets/homeIcon2.png" id="imagemHome" alt="homeIcon2"  width="50" height="50">
+            </a>
 
-    <main>
+            <nav class="header-nav">
+                <button onclick="toggleIcon()" class="theme-toggle-button" id="ClaroEscuro">
+                    <img id="imagemModoCE" src="./style/assets/modo-claroescuro.png" width="30" height="30" alt="Alternar modo claro/escuro">
+                </button>
+                <div class="user-profile">
+                    <img src="./style/assets/images.png" alt="Foto do usuário" class="user-image">
+                </div>
+            </nav>
+            <link rel="stylesheet" href="./style/modo-escuro.css">
+            <script src="./scripts/acessibilidade/modo-escuro.js" defer></script>
+          </header>
+    </div>
+
+    <div class="mainPage">
         <div id="start-relatorio">
             <h1>Relatório de Registro de Pontos</h1>
-            <p id="enunciado">( Clique em uma das seguintes datas )</p>
+            <p id="enunciado">Selecione uma data abaixo para visualizar os registros.</p>
         </div>
         <label id="labelFiltro" for="filter">Filtrar registros:</label>
         <select id="filter">
@@ -46,7 +50,7 @@
         <div id="registros-relatorio"></div>    
         <button onclick="window.location.href='./grafico.html'" id="btn-gerar-grafico">Gerar Gráfico</button>
         <button id="btn-exportar-pdf">Exportar para .txt</button>
-    </main>
+    </div>
     <script type="module" src="./scripts/relatorio/relatorio.js"></script>
 
 </body>

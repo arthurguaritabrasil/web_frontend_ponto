@@ -1,15 +1,14 @@
-import { getRegisters } from '../relatorio/getStorage.js'
+import { getRegisters } from '../relatorio/getStorage.js';
 
 function calcularHorasTrabalhadasPorDia() {
     let registros = getRegisters();
-    
     let horasPorDia = {};
 
     registros.forEach(registro => {
         const data = registro.data;
         const hora = registro.hora;
         const tipo = registro.tipo;
-        
+
         if (!horasPorDia[data]) {
             horasPorDia[data] = { entrada: null, saida: null };
         }
@@ -54,22 +53,26 @@ function calcularDiferencaHoras(entrada, saida) {
 
 let resultados = calcularHorasTrabalhadasPorDia();
 let labels = resultados.map(item => item.data);
-let data = resultados.map(item => item.horasTrabalhadas);
+let data = resultados.map(item => {
+    const [horas, minutos] = item.horasTrabalhadas.match(/\d+/g).map(Number);
+    return horas + minutos / 60;
+});
 
 const ctx = document.getElementById('workHoursChart').getContext('2d');
 const workHoursChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: labels,
         datasets: [{
             label: 'Horas Trabalhadas',
-            data: data.map(item => {
-                const [horas, minutos] = item.match(/\d+/g).map(Number);
-                return horas + minutos / 60;
-            }),
-            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+            data: data,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
+            borderWidth: 2,
+            pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+            pointBorderColor: '#fff',
+            pointRadius: 5,
+            tension: 0.3 // Linha curva
         }]
     },
     options: {
